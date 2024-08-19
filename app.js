@@ -12,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/food", foodController);
 
+
 // ROUTES
 app.get("/", (req, res) => {
   res.send("Welcome to Seconds App");
