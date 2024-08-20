@@ -11,11 +11,13 @@ const app = express();
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json());
-app.use("/food", foodController);
-app.use("/restaurants", restaurantController);
 
 
 // ROUTES
+
+app.use("/food", foodController);
+app.use("/restaurants", restaurantController);
+
 app.get("/", (req, res) => {
   res.send("Welcome to Seconds App");
   });

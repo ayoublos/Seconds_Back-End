@@ -10,9 +10,12 @@ const getAllFood = async () => {
 };
 
 const getOneFood = async (id) => {
-    const oneFood = await db.one("SELECT * FROM food WHERE id=$1", id);
-    return oneFood;
-  
+    try{
+        const oneFood = await db.oneOrNone("SELECT * FROM food WHERE id=$1", id);
+        return oneFood;
+    } catch (error) {
+        return { error: "onFood not found" }
+    } 
 };
 
 const createFood = async (food) => {
