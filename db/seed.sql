@@ -66,10 +66,11 @@ VALUES
         80201
     );
 
+
 INSERT INTO food (name,restaurant_food_id,rating,seconds,img,restaurant_id)
 VALUES
     ('Chicken Sandwich', '1', 5, true, 'https://dynl.mktgcdn.com/p/rlMTM2pluTIrXMa_PmXTCsqqlOdvERi-oXVWQbTt0IQ/619x619.jpg', 1),
-        ('Veggie Burger', '2', 6, true, 'https://example.com/images/veggie-burger.jpg', 2),
+    ('Veggie Burger', '2', 6, true, 'https://example.com/images/veggie-burger.jpg', 2),
     ('Spicy Tacos', '3', 7, false, 'https://example.com/images/spicy-tacos.jpg', 1),
     ('Caesar Salad', '4', 8, true, 'https://example.com/images/caesar-salad.jpg', 3),
     ('BBQ Ribs', '5', 12, true, 'https://example.com/images/bbq-ribs.jpg', 2),
