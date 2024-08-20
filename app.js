@@ -1,6 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const foodController = require("./controllers/foodController");
+const restaurantController = require("./controllers/restaurantController");
 
 // CONFIGURATION
 const app = express();
@@ -10,10 +11,13 @@ const app = express();
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json());
-app.use("/food", foodController);
 
 
 // ROUTES
+
+app.use("/food", foodController);
+app.use("/restaurants", restaurantController);
+
 app.get("/", (req, res) => {
   res.send("Welcome to Seconds App");
   });

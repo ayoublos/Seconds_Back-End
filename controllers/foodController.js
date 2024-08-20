@@ -1,6 +1,7 @@
 const express = require("express");
 const { getAllFood, getOneFood, createFood, deleteFood, updateFood } = require("../queries/food");
 const food = express.Router();
+const { checkFood } = require("../validations/checkFood");
 
 
 //INDEX
