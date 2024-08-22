@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllFood, getOneFood, createFood, deleteFood, updateFood } = require("../queries/food");
+const { getAllFood, getOneFood, createFood, deleteFood, updateFood, getOneFoodName } = require("../queries/food");
 const food = express.Router();
 
 
@@ -16,7 +16,8 @@ food.get("/", async (req, res) => {
 //SHOW
  food.get("/:id" , async (req, res) => {
     const { id } = req.params;
-    const oneFood =await getOneFood(id);
+    const oneFood =await getOneFoodName(Number(id));
+    console.log(oneFood);
     if (oneFood) {
         res.json(oneFood);
     } else {

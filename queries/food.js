@@ -10,10 +10,22 @@ const getAllFood = async () => {
 };
 
 const getOneFood = async (id) => {
-    const oneFood = await db.one("SELECT * FROM food WHERE id=$1", id);
-    return oneFood;
-  
+    try {
+        const oneFood = await db.one("SELECT * FROM food WHERE id=$1", id);
+        return oneFood;
+    } catch (error) {
+        return {error: "Food Not Found"}
+    }
 };
+
+const getOneFoodName = async (id) => {
+    try {
+        const oneFood = await db.one("SELECT food.*, restaurants.name AS restaurant_name FROM food JOIN restaurants ON food.restaurant_id = restaurants.id WHERE food.id=$1", id);
+        return oneFood;
+    } catch (error) {
+        return {error: "Food Not Found"}
+    }
+}
 
 const createFood = async (food) => {
     const { name, restaurant_food_id, rating, seconds, img, created_at, notification_date, restaurant_id } = food;
@@ -43,5 +55,6 @@ module.exports = {
     getOneFood,
     createFood,
     deleteFood,
-    updateFood
+    updateFood,
+    getOneFoodName
 }
