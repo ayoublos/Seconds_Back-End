@@ -27,6 +27,6 @@ CREATE TABLE food (
  img TEXT,
  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  notification_date TIMESTAMP,
-restaurant_id INTEGER REFERENCES restaurants (id)
+ restaurant_id INTEGER REFERENCES restaurants (id)
  ON DELETE CASCADE
 );
